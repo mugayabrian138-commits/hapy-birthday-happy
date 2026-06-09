@@ -379,41 +379,7 @@
   </div>
 </div>
 
-<div class="page" id="page2">
-  <div class="steps">
-    <div class="step-dot done"></div>
-    <div class="step-line done"></div>
-    <div class="step-dot active" id="s2b"></div>
-    <div class="step-line" id="l2b"></div>
-    <div class="step-dot" id="s3b"></div>
-  </div>
 
-  <div class="card">
-    <div class="card-glow glow-1" style="background:var(--accent3)"></div>
-    <div class="card-glow glow-2"></div>
-
-    <div class="gif-wrap">
-      <img src="dog side eye.jpg" alt="Mhhm prove it">
-    </div>
-
-    <h1 class="page-title">Mhhm... prove it.</h1>
-    <p class="page-sub">
-      Cool name. But how do I <strong>really</strong> know it's you?<br>
-      Enter your birthday below. You know the one. 🎂
-    </p>
-
-    <input
-      class="input-field"
-      id="dateInput"
-      type="date"
-    />
-    <div class="error-msg" id="dateError">
-      🤨 That's not the right date... nice try though.
-    </div>
-    <p class="hint">month-date-year</p>
-    <button class="btn-next" onclick="checkDate()">That's my birthday →</button>
-  </div>
-</div>
 
 <div class="page" id="page3">
   <div class="steps">
@@ -497,21 +463,7 @@
     }
   }
 
-  // PAGE 2
-  function checkDate() {
-    const val = document.getElementById('dateInput').value;
-    const correct = '2005-06-09';
-    const err = document.getElementById('dateError');
-    if (val === correct) {
-      err.classList.remove('show');
-      goToPage(3);
-      for (let i = 0; i < 4; i++) setTimeout(() => spawnParticle(18), i * 400);
-    } else {
-      err.classList.remove('show');
-      void err.offsetWidth;
-      err.classList.add('show');
-    }
-  }
+ 
 
   function goToPage(n) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -520,7 +472,6 @@
   }
 
   document.getElementById('nameInput').addEventListener('keydown', e => { if (e.key === 'Enter') checkName(); });
-  document.getElementById('dateInput').addEventListener('keydown', e => { if (e.key === 'Enter') checkDate(); });
 </script>
 </body>
 </html>
